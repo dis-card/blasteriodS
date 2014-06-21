@@ -19,12 +19,12 @@ void cls (void)
 
 }
 
-int get_screen_width (ALLEGRO_DISPLAY *display)
+int get_display_width (ALLEGRO_DISPLAY *display)
 {
 	return al_get_display_width(display);
 }
 
-int get_screen_height( ALLEGRO_DISPLAY *display)
+int get_display_height( ALLEGRO_DISPLAY *display)
 {
 	return al_get_display_height(display);
 }

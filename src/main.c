@@ -22,10 +22,6 @@
 int returnCode = SUCCESS;
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_FONT *font = NULL;
-int screen_w = 0;
-int screen_h = 0;
-int init(void);
-void destroy(void);
 
 int main (void )
 {
@@ -34,7 +30,7 @@ int main (void )
 	init();
 
 	cls();
-	al_draw_textf(font,MAGENTA,get_screen_width(display)/2,get_screen_height(display)/2,ALLEGRO_ALIGN_CENTRE,GAME_TITLE);
+	al_draw_textf(font,MAGENTA,get_display_width(display)/2,get_display_height(display)/2,ALLEGRO_ALIGN_CENTRE,GAME_TITLE);
 
 	al_flip_display();
 	al_rest(5.0);
@@ -62,8 +58,6 @@ int init(void)
 		returnCode = AL_DISPLAY_ERR;
 		return returnCode;
 	}
-	screen_w = al_get_display_width(display);
-	screen_h = al_get_display_height(display);
 
 	al_init_font_addon();
 	al_init_ttf_addon();

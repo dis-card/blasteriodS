@@ -9,12 +9,7 @@
 
 
 int init (void);
-
 void destroy (void);
-
 void cls (void);
-
-
-int get_screen_width ( ALLEGRO_DISPLAY *);
-
-int get_screen_height ( ALLEGRO_DISPLAY *);
+int get_display_width ( ALLEGRO_DISPLAY *);
+int get_display_height ( ALLEGRO_DISPLAY *);
