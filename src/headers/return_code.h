@@ -17,6 +17,8 @@
 
 /* Warning code starts form -29 and ends at 0		*/
 
-#define		AL_LOAD_FONT_WARN	-29
+#define		AL_LOAD_FONT_WARN		-29
+#define		AL_INSTALL_KBD_WARN		-28
+#define		AL_CREATE_EVT_Q_WARN	-28
 
 
