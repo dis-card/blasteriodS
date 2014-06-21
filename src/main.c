@@ -20,22 +20,55 @@
 #include	"headers/constants.h"
 #include	"headers/colors.h"
 int returnCode = SUCCESS;
+bool game_over = false;
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_FONT *font = NULL;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 
 int main (void )
 {
+	int pos_x = 0;
+	int pos_y = 0;
 
 
 	if ( SUCCESS != init() )
 		goto exit;
-
 	cls();
-	al_draw_textf(font,MAGENTA,get_display_width(display)/2,get_display_height(display)/2,ALLEGRO_ALIGN_CENTRE,GAME_TITLE);
-
+	al_draw_textf(font,MAGENTA,(pos_x = get_display_width(display)/2),(pos_y = get_display_height(display)/2),ALLEGRO_ALIGN_CENTRE,GAME_TITLE);
 	al_flip_display();
-	al_rest(5.0);
+	while ( !game_over )
+	{
+		ALLEGRO_EVENT evt;
+		al_wait_for_event(event_queue,&evt);
+		if ( evt.type == ALLEGRO_EVENT_KEY_DOWN )
+		{
+			switch ( evt.keyboard.keycode )
+			{
+				case ALLEGRO_KEY_UP:
+					pos_y = pos_y - 10;
+					break;
+				case ALLEGRO_KEY_DOWN:
+					pos_y = pos_y + 10;
+					break;
+				case ALLEGRO_KEY_LEFT:
+					pos_x = pos_x - 10;
+					break;
+				case ALLEGRO_KEY_RIGHT:
+					pos_x = pos_x + 10;
+					break;
+			}
+		}
+		else if ( evt.type == ALLEGRO_EVENT_KEY_UP )
+		{
+			if ( evt.keyboard.keycode == ALLEGRO_KEY_ESCAPE )
+			{
+				game_over = true;
+			}
+		}
+		cls();
+		al_draw_textf(font,MAGENTA,pos_x ,pos_y ,ALLEGRO_ALIGN_CENTRE,GAME_TITLE);
+		al_flip_display();
+	}
 
 exit:
 	destroy();
