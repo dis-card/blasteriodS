@@ -14,3 +14,9 @@
 #define		AL_DISPLAY_ERR	-99
 
 
+
+/* Warning code starts form -29 and ends at 0		*/
+
+#define		AL_LOAD_FONT_WARN	-29
+
+
