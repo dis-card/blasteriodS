@@ -85,7 +85,7 @@ int main(void) {
 			pos_x = pos_x + keys[RIGHT] * 5;
 			redraw = true;
 		}
-		if (redraw) {
+		if (redraw && al_is_event_queue_empty(event_queue)) {
 			cls();
 			al_draw_textf(font, MAGENTA, pos_x, pos_y, ALLEGRO_ALIGN_CENTRE,
 			GAME_TITLE);
@@ -167,6 +167,7 @@ int init(void) {
 	return returnCode;
 }
 
+/*	free the resources used by allegro.	*/
 void destroy(void) {
 	if (display != NULL)
 		al_destroy_display(display);

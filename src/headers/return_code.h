@@ -10,12 +10,12 @@
 
 
 /* Error code starts from -100 and ends at -30		*/
-#define		AL_INIT_ERR		-100
-#define		AL_DISPLAY_ERR	-99
+#define		AL_INIT_ERR				-100
+#define		AL_DISPLAY_ERR			-99
 
 
 
-/* Warning code starts form -29 and ends at 0		*/
+/* Warning code starts from -29 and ends at 0		*/
 
 #define		AL_LOAD_FONT_WARN		-29
 #define		AL_INSTALL_KBD_WARN		-28
