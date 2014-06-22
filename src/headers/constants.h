@@ -16,6 +16,8 @@
 #define		NO_DISPLAY			NULL
 #define		GAME_TITLE			"blasteriodS"
 #define		FONT_SIZE			24
+#define		FPS					40
+#define		MOVE_STEPS			5
 const char error[] = "Error";
 const char warning[] = "Warning";
 const char info[] = "Information";
